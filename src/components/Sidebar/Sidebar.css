@@ -1,0 +1,122 @@
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
+
+/* ---------- Top ---------- */
+.sidebar-top {
+    flex: 1; /* This is the magic property that pushes the bottom section down */
+    padding: 28px 18px;
+}
+
+/* ---------- Logo ---------- */
+.logo {
+    margin-bottom: 36px;
+}
+
+.logo h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2563eb;
+    line-height: 1;
+    margin: 0;
+}
+
+.logo p {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #6b7280;
+}
+
+/* ---------- Navigation ---------- */
+.menu-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin-bottom: 16px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-link {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 16px;
+    text-decoration: none;
+    color: #374151;
+    border-radius: 10px;
+    transition: .2s ease;
+}
+
+.menu-link svg {
+    font-size: 18px;
+    width: 20px;
+}
+
+.menu-link span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Hover */
+.menu-link:hover {
+    background: #f3f4f6;
+}
+
+/* Active */
+.menu-link.active {
+    background: #eff6ff;
+    color: #2563eb;
+    font-weight: 600;
+    border-left: 4px solid #2563eb;
+    border-radius: 0 10px 10px 0;
+}
+
+.menu-link.active svg {
+    color: #2563eb;
+}
+
+/* ---------- Bottom ---------- */
+.sidebar-bottom {
+    padding: 18px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.logout-btn {
+    width: 100%;
+    height: 46px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #dc2626;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.logout-btn:hover {
+    background: #fef2f2;
+}
