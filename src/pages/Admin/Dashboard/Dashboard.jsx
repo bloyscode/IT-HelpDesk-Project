@@ -1,5 +1,5 @@
 import { FaUserCircle } from "react-icons/fa";
-import StatCard from "../../components/StatCard/StatCard";
+import StatCard from "../../../components/StatCard/StatCard";
 import "./Dashboard.css";
 
 function Dashboard() {

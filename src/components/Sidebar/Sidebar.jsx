@@ -18,6 +18,8 @@ function Sidebar() {
         navigate("/", { replace: true });
     };
 
+    const role = localStorage.getItem("userRole") || "admin";
+
     return (
         <aside className="sidebar">
             {/* --- Top Section (Grows to push bottom section down) --- */}
@@ -27,42 +29,73 @@ function Sidebar() {
                 </div>
 
                 <ul className="menu">
-                    <li>
-                        <NavLink to="/dashboard" className="menu-link">
-                            <FaTachometerAlt />
-                            <span>Dashboard</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/tickets" className="menu-link">
-                            <FaTicketAlt />
-                            <span>Tickets</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/create-ticket" className="menu-link">
-                            <FaPlusCircle />
-                            <span>Create Ticket</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/users" className="menu-link">
-                            <FaUsers />
-                            <span>Users</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/reports" className="menu-link">
-                            <FaChartBar />
-                            <span>Reports</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/settings" className="menu-link">
-                            <FaCog />
-                            <span>Settings</span>
-                        </NavLink>
-                    </li>
+                    {role === "admin" ? (
+                        <>
+                            <li>
+                                <NavLink to="/dashboard" className="menu-link">
+                                    <FaTachometerAlt />
+                                    <span>Dashboard</span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/tickets" className="menu-link">
+                                    <FaTicketAlt />
+                                    <span>Tickets</span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/create-ticket" className="menu-link">
+                                    <FaPlusCircle />
+                                    <span>Create Ticket</span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/users" className="menu-link">
+                                    <FaUsers />
+                                    <span>Users</span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/reports" className="menu-link">
+                                    <FaChartBar />
+                                    <span>Reports</span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/settings" className="menu-link">
+                                    <FaCog />
+                                    <span>Settings</span>
+                                </NavLink>
+                            </li>
+                        </>
+                    ) : (
+                        <>
+                            <li>
+                                <NavLink to="/user/dashboard" className="menu-link">
+                                    <FaTachometerAlt />
+                                    <span>Dashboard</span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/user/my-tickets" className="menu-link">
+                                    <FaTicketAlt />
+                                    <span>My Tickets</span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/user/create-ticket" className="menu-link">
+                                    <FaPlusCircle />
+                                    <span>Create Ticket</span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/user/profile" className="menu-link">
+                                    <FaUsers />
+                                    <span>Profile</span>
+                                </NavLink>
+                            </li>
+                        </>
+                    )}
                 </ul>
             </div>
 

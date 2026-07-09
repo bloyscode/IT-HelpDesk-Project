@@ -1,0 +1,136 @@
+.settings-page {
+    padding: 32px;
+    background: var(--background);
+    min-height: 100vh;
+}
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+
+.page-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.settings-header h1 {
+    font-size: 2rem;
+    color: var(--text);
+    margin: 0;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: var(--primary-hover);
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.settings-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.settings-card-header {
+    margin-bottom: 16px;
+}
+
+.settings-card-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 6px;
+    color: var(--text);
+}
+
+.settings-card-header p {
+    margin: 0;
+    color: var(--text-light);
+}
+
+.toggle-row,
+.field-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.toggle-row:last-of-type,
+.field-row:last-of-type {
+    border-bottom: none;
+}
+
+.toggle-row span,
+.field-row span {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.toggle-row input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+}
+
+.field-row select {
+    min-width: 140px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: white;
+    color: var(--text);
+}
+
+.settings-note {
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    background: #f8fafc;
+    color: var(--text-light);
+}
+
+@media (max-width: 900px) {
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .settings-page {
+        padding: 20px;
+    }
+
+    .settings-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
